@@ -16,7 +16,7 @@ namespace Homework2
                 Console.Clear();
                 //try  //Check correct input 
                 //{
-                Console.WriteLine("Choose menu\n1 - Minimum number\n2 - Average multiple 8\n3 - Login/Password checker\n4 - BodyMassIndex\n0 - Exit\n");   //Menu
+                Console.WriteLine("Choose menu\n1 - Minimum number\n2 - Average multiple 8\n3 - Login/Password checker\n4 - BodyMassIndex\n7 - Secret Password\n0 - Exit\n");   //Menu
                 
                 //int swPos = Convert.ToInt32(Console.ReadLine());
                 //Чтобы не использовать try-catch для проверки корректности ввода можно использовать TryParse таким вот образом:
@@ -36,6 +36,9 @@ namespace Homework2
                             break;
                         case 4:
                             BodyMassIndex();
+                            break;
+                        case 7:
+                            Password.ReadInput();
                             break;
                         case 0: exit = false; break;
                     }
