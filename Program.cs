@@ -14,13 +14,14 @@ namespace Homework2
             do
             {
                 Console.Clear();
-                try  //Check correct input 
+                //try  //Check correct input 
+                //{
+                Console.WriteLine("Choose menu\n1 - Minimum number\n2 - Average multiple 8\n3 - Login/Password checker\n4 - BodyMassIndex\n0 - Exit\n");   //Menu
+                
+                //int swPos = Convert.ToInt32(Console.ReadLine());
+                //Чтобы не использовать try-catch для проверки корректности ввода можно использовать TryParse таким вот образом:
+                if (int.TryParse(Console.ReadLine(), out int swPos))
                 {
-
-
-                    Console.WriteLine("Choose menu\n1 - Minimum number\n2 - Average multiple 8\n3 - Login/Password checker\n4 - BodyMassIndex\n0 - Exit\n");   //Menu
-                    int swPos = Convert.ToInt32(Console.ReadLine());
-
                     switch (swPos)
                     {
                         case 1:
@@ -36,17 +37,13 @@ namespace Homework2
                         case 4:
                             BodyMassIndex();
                             break;
-
-
-
                         case 0: exit = false; break;
                     }
                 }
-                catch { }
-
+                //}
+                //catch { }
             }
             while (exit);
-
         }
 
         static void MinNumber()  //Minnumber function (C) K.O.
@@ -71,7 +68,6 @@ namespace Homework2
                         minNum = (y);
                     else
                         minNum = z;
-
                 }
                 Console.WriteLine($"Minimum number is: {minNum}");
                 Console.ReadKey();
@@ -80,8 +76,6 @@ namespace Homework2
             {
                 Console.WriteLine("Please enter integer value");
             }
-
-
         }
 
         static void AvgMulti8()
@@ -107,8 +101,12 @@ namespace Homework2
             catch (FormatException)
             {
                 Console.WriteLine("Please enter only int value");
+                Console.ReadKey();
             }
-            if (result == 0) { }
+            if (result == 0) 
+            {
+                //А код где? Или сообщение?
+            }
             else
             {
                 Console.WriteLine($"Average multiple 8 = {result / count}");
@@ -136,6 +134,7 @@ namespace Homework2
             while (count != 3);
             return false;
         }
+
         static void BodyMassIndex()         //again -_-
         {
             double BMIRec;
